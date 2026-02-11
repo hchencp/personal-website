@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --color-primary: #008080;
+  --color-secondary: #4a6b3a;
+  --color-accent: #2f5c35;
+  --color-bg-light: #f0f4f8;
+  --color-text-main: #333333;
+  --color-text-inverted: #ffffff;
+  --color-border: #008080;
+
+  /* Fonts */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  /* Spacing & Sizing */
+  --gap-standard: 20px;
+  --nav-height: 60px;
+}
+
+body.dark-mode {
+  --color-text-inverted: #0b0f10;
+  --color-text-main: #f2f5f7;
+
+  --color-bg-light: #141a1c;
+  --color-border: #2b3a3f;
+
+  --color-primary: #0f3a3a;
+  --color-secondary: #7fbf7a;
+  --color-accent: #1e6a6a;
+}

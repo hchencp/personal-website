@@ -1,0 +1,265 @@
+/* Import Design Tokens */
+@import url("tokens.css");
+
+/* CSS Reset - Lab 5b recommendation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  background-color: var(--color-text-inverted);
+}
+
+/* Header & Flex Navbar - Lab 5b */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverted);
+  padding: 0 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically centered text */
+  min-height: var(--nav-height); /* allows header to grow on mobile */
+}
+
+/* Left and right groups for header */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-standard);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center; /* vertically centered */
+  gap: var(--gap-standard);
+}
+
+.nav-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Nav links (desktop default = row) */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--gap-standard);
+}
+
+.nav-links a {
+  color: var(--color-text-inverted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: var(--color-accent);
+  border-radius: 4px;
+}
+
+/* Optional "active" page underline from header.mjs */
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+/* Dark mode label styling */
+.dark-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+/* Menu button (mobile only) */
+.menu-btn {
+  display: none; /* hidden on desktop */
+  padding: 6px 12px;
+  border: 2px solid var(--color-text-inverted);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-inverted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== Mobile layout rules (Labs 9/10) ===== */
+@media (max-width: 700px) {
+  /* show menu button only on narrow screens */
+  .menu-btn {
+    display: inline-block;
+  }
+
+  /* let stacked header align nicely */
+  .navbar {
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+
+  /* put nav under name, left aligned */
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* nav becomes vertical list */
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* hidden by default until menu is clicked */
+  .site-nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* shown when JS toggles class */
+  .navbar.mobile-open .site-nav {
+    display: block;
+  }
+}
+
+/* Main Layout */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Description Box Refined */
+.description-box,
+.recipe-card {
+  background-color: var(--color-bg-light);
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.profile-photo {
+  display: block;
+  max-width: 250px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 8px;
+}
+
+/* CSS Grid for Contact Info - Lab 6b */
+.contact-section {
+  margin-top: 3rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* Two columns */
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-grid dt {
+  font-weight: bold;
+  color: var(--color-primary);
+  grid-column: 1;
+}
+
+.contact-grid dd {
+  grid-column: 2;
+  margin: 0;
+}
+
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverted);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* ===== Contact Form ===== */
+.contact-form-section {
+  margin-top: 2rem;
+}
+
+#contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.5rem;
+}
+
+#contact-form input[type="email"],
+#contact-form textarea {
+  padding: 0.6rem;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+  background: var(--color-bg-light);
+  color: var(--color-text-main);
+}
+
+#contact-form fieldset {
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--color-bg-light);
+}
+
+#contact-form input[type="submit"] {
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: var(--color-text-inverted);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-error {
+  color: #b00020;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  color: var(--color-text-main);
+}
+
+body.dark-mode .nav-links a {
+  color: var(--color-text-main);
+}
+
+body.dark-mode .menu-btn {
+  color: var(--color-text-main);
+  border-color: var(--color-text-main);
+}
+
+body.dark-mode .contact-grid dt {
+  color: var(--color-text-main);
+}

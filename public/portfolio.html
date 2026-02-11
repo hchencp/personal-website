@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henry Chen's CS Projects</title>
+
+    <!-- Shared site styles (header styles + tokens) -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Use tokens so dark-mode overrides work */
+      body {
+        font-family: var(--font-body);
+        background-color: var(--color-text-inverted);
+        color: var(--color-text-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* Page hero header (not the site navbar) */
+      header.page-hero {
+        background-color: var(--color-primary);
+        color: var(--color-text-inverted);
+        padding: 40px;
+        text-align: center;
+      }
+
+      header.page-hero h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      header.page-hero p {
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+
+      /* Project grid section */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .project-item {
+        background-color: var(--color-bg-light);
+        border: 2px solid var(--color-border);
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      .project-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        border-radius: 4px;
+      }
+
+      .project-item h2 {
+        font-size: 1.5em;
+        color: var(--color-secondary);
+        margin-bottom: 10px;
+      }
+
+      .project-item p {
+        font-size: 1em;
+        color: var(--color-text-main);
+        margin-bottom: 20px;
+      }
+
+      .project-item a {
+        display: inline-block;
+        background-color: var(--color-primary);
+        color: var(--color-text-inverted);
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      .project-item a:hover,
+      .project-item a:focus {
+        background-color: var(--color-accent);
+        text-decoration: underline;
+        outline: 2px solid var(--color-border);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- JS-generated site header -->
+    <div id="site-header"></div>
+    <script type="module" src="header.mjs"></script>
+
+    <!-- Page hero header (separate from site header) -->
+    <header class="page-hero">
+      <h1>Henry Chen's CS Projects</h1>
+      <p>
+        Welcome to my portfolio of computer science projects. Explore my work
+        below.
+      </p>
+    </header>
+
+    <main>
+      <section class="project-grid" aria-label="Project List">
+        <article class="project-item">
+          <img
+            src="ss1.png"
+            alt="Dashboard interface of Employee Manager app showing employee list"
+          />
+          <h2>Employee Manager</h2>
+          <p>
+            A web-based Employee Manager application built using Java and Spring
+            Boot to manage employee records.
+          </p>
+          <a
+            href="https://github.com/hchencp/EmployeeManager"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source code for Employee Manager"
+          >
+            View Code
+          </a>
+        </article>
+
+        <article class="project-item">
+          <img
+            src="ss2.png"
+            alt="Trip Planner mobile app showing expense tracking feature"
+          />
+          <h2>Trip Planner App</h2>
+          <p>
+            A mobile app to plan trips with friends, including expense tracking,
+            group chat, and real-time notifications.
+          </p>
+          <a
+            href="https://github.com/hchencp/PokemonMiniGame"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source code for Trip Planner App"
+          >
+            View Code
+          </a>
+        </article>
+
+        <article class="project-item">
+          <img src="project3.jpg" alt="" />
+          <h2>Work in Progress</h2>
+          <p>Coming soon...</p>
+          <a href="#" aria-disabled="true">Coming Soon</a>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

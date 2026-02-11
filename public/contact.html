@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Henry</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- JS-generated header -->
+    <div id="site-header"></div>
+    <script type="module" src="header.mjs"></script>
+
+    <main>
+      <section
+        class="contact-form-section"
+        aria-labelledby="contact-form-title"
+      >
+        <h1 id="contact-form-title">Contact Me</h1>
+
+        <form id="contact-form" novalidate>
+          <!-- Email -->
+          <div class="form-row">
+            <label for="contact-email">Email (required)</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <!-- Checkbox group -->
+          <fieldset class="form-row">
+            <legend>What best describes you? (select at least one)</legend>
+
+            <label>
+              <input type="checkbox" name="role" value="employer" />
+              Employer
+            </label>
+
+            <label>
+              <input type="checkbox" name="role" value="peer" />
+              Peer
+            </label>
+
+            <label>
+              <input type="checkbox" name="role" value="other" />
+              Other
+            </label>
+          </fieldset>
+
+          <!-- Optional message -->
+          <div class="form-row">
+            <label for="contact-message">Message (optional)</label>
+            <textarea id="contact-message" name="message" rows="5"></textarea>
+          </div>
+
+          <input type="submit" value="Send" />
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Henry | All Rights Reserved</p>
+    </footer>
+
+    <script type="module" src="form.mjs"></script>
+  </body>
+</html>
